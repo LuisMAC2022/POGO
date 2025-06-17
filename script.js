@@ -6,6 +6,17 @@ const ivDef = document.getElementById('ivDef');
 const ivSta = document.getElementById('ivSta');
 const output = document.getElementById('searchString');
 const copyButton = document.getElementById('copyButton');
+const leagueSelect = document.getElementById('league');
+const rankSelect = document.getElementById('rank');
+
+let pvpData = null;
+
+fetch('public/pvpivs.json')
+    .then(response => response.json())
+    .then(data => {
+        pvpData = data;
+        updateSearch();
+    });
 
 function updateSearch() {
     const parts = [];
@@ -23,6 +34,17 @@ function updateSearch() {
         parts.push(`iv_sta>=${ivSta.value}`);
     }
 
+    if (pvpData && leagueSelect.value && parseInt(rankSelect.value, 10) > 0) {
+        const league = leagueSelect.value;
+        const rankLimit = parseInt(rankSelect.value, 10);
+        const names = pvpData[league]
+            .filter(p => p.rank <= rankLimit)
+            .map(p => p.name);
+        if (names.length > 0) {
+            parts.push(names.join(','));
+        }
+    }
+
     output.value = parts.join(' & ');
 }
 
@@ -37,8 +59,9 @@ ivAtk.addEventListener('input', updateSearch);
 ivDef.addEventListener('input', updateSearch);
 ivSta.addEventListener('input', updateSearch);
 copyButton.addEventListener('click', copyToClipboard);
+leagueSelect.addEventListener('change', updateSearch);
+rankSelect.addEventListener('change', updateSearch);
 
 // Actualizar inicialmente
 updateSearch();
 
-// TODO: Integrar datos de pvpivs.com para filtrar por ranking
