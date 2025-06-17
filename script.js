@@ -25,13 +25,13 @@ function updateSearch() {
     if (excludeShiny.checked) parts.push('!Shiny');
 
     if (parseInt(ivAtk.value, 10) > 0) {
-        parts.push(`iv_atk>=${ivAtk.value}`);
+        parts.push(`attack${ivAtk.value}-`);
     }
     if (parseInt(ivDef.value, 10) > 0) {
-        parts.push(`iv_def>=${ivDef.value}`);
+        parts.push(`defense${ivDef.value}-`);
     }
     if (parseInt(ivSta.value, 10) > 0) {
-        parts.push(`iv_sta>=${ivSta.value}`);
+        parts.push(`hp${ivSta.value}-`);
     }
 
     if (pvpData && leagueSelect.value && parseInt(rankSelect.value, 10) > 0) {
