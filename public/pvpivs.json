@@ -1,0 +1,16 @@
+{
+  "great": [
+    {"name": "Azumarill", "rank": 1},
+    {"name": "Galarian Stunfisk", "rank": 2},
+    {"name": "Altaria", "rank": 3}
+  ],
+  "ultra": [
+    {"name": "Registeel", "rank": 1},
+    {"name": "Cresselia", "rank": 2},
+    {"name": "Swampert", "rank": 3}
+  ],
+  "master": [
+    {"name": "Dialga", "rank": 1},
+    {"name": "Mewtwo", "rank": 2}
+  ]
+}

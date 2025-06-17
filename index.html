@@ -22,6 +22,25 @@
                 <label>Defensa: <input type="number" id="ivDef" min="0" max="15" value="0"></label>
                 <label>Stamina: <input type="number" id="ivSta" min="0" max="15" value="0"></label>
             </fieldset>
+            <fieldset>
+                <legend>Ranking PvP</legend>
+                <label>Liga:
+                    <select id="league">
+                        <option value="">--</option>
+                        <option value="great">Super</option>
+                        <option value="ultra">Ultra</option>
+                        <option value="master">Master</option>
+                    </select>
+                </label>
+                <label>Top rango:
+                    <select id="rank">
+                        <option value="0">--</option>
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select>
+                </label>
+            </fieldset>
         </form>
         <section class="output">
             <textarea id="searchString" readonly rows="3"></textarea>
