@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POGO Filtro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Generador de filtros para Pokémon GO</h1>
+        <form id="filters">
+            <fieldset>
+                <legend>Exclusiones</legend>
+                <label><input type="checkbox" id="exclude4"> Excluir 4★</label>
+                <label><input type="checkbox" id="excludeLegendary"> Excluir legendarios/míticos</label>
+                <label><input type="checkbox" id="excludeShiny"> Excluir shinys</label>
+            </fieldset>
+            <fieldset>
+                <legend>IV mínimos</legend>
+                <label>Ataque: <input type="number" id="ivAtk" min="0" max="15" value="0"></label>
+                <label>Defensa: <input type="number" id="ivDef" min="0" max="15" value="0"></label>
+                <label>Stamina: <input type="number" id="ivSta" min="0" max="15" value="0"></label>
+            </fieldset>
+        </form>
+        <section class="output">
+            <textarea id="searchString" readonly rows="3"></textarea>
+            <button id="copyButton" type="button">Copiar</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
